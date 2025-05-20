@@ -1,1 +1,33 @@
-"use strict";(()=>{var e={};e.id=453,e.ids=[453],e.modules={145:e=>{e.exports=require("next/dist/compiled/next-server/pages-api.runtime.prod.js")},3512:(e,t)=>{Object.defineProperty(t,"l",{enumerable:!0,get:function(){return function e(t,n){return n in t?t[n]:"then"in t&&"function"==typeof t.then?t.then(t=>e(t,n)):"function"==typeof t&&"default"===n?t:void 0}}})},1559:(e,t,n)=>{n.r(t),n.d(t,{config:()=>d,default:()=>P,routeModule:()=>l});var r={};n.r(r),n.d(r,{default:()=>o});var i=n(8957),u=n(3471),a=n(3512);let o=(e,t)=>{t.status(200).json({name:"Yaseen"})},P=(0,a.l)(r,"default"),d=(0,a.l)(r,"config"),l=new i.PagesAPIRouteModule({definition:{kind:u.x.PAGES_API,page:"/api/hello",pathname:"/api/hello",bundlePath:"",filename:""},userland:r})},3471:(e,t)=>{var n;Object.defineProperty(t,"x",{enumerable:!0,get:function(){return n}}),function(e){e.PAGES="PAGES",e.PAGES_API="PAGES_API",e.APP_PAGE="APP_PAGE",e.APP_ROUTE="APP_ROUTE"}(n||(n={}))},8957:(e,t,n)=>{e.exports=n(145)}};var t=require("../../webpack-api-runtime.js");t.C(e);var n=t(t.s=1559);module.exports=n})();
+(function() {
+var exports = {};
+exports.id = 453;
+exports.ids = [453];
+exports.modules = {
+
+/***/ 689:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const handler = (req, res) => {
+  res.status(200).json({
+    name: "Yaseen"
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (handler);
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+var __webpack_exports__ = (__webpack_exec__(689));
+module.exports = __webpack_exports__;
+
+})();

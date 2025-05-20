@@ -1,1 +1,151 @@
-"use strict";(()=>{var e={};e.id=820,e.ids=[820,888],e.modules={7517:(e,t)=>{Object.defineProperty(t,"l",{enumerable:!0,get:function(){return function e(t,r){return r in t?t[r]:"then"in t&&"function"==typeof t.then?t.then(t=>e(t,r)):"function"==typeof t&&"default"===r?t:void 0}}})},9978:(e,t,r)=>{r.r(t),r.d(t,{config:()=>f,default:()=>d,getServerSideProps:()=>p,getStaticPaths:()=>c,getStaticProps:()=>u,reportWebVitals:()=>g,routeModule:()=>y,unstable_getServerProps:()=>m,unstable_getServerSideProps:()=>b,unstable_getStaticParams:()=>P,unstable_getStaticPaths:()=>x,unstable_getStaticProps:()=>h});var s=r(6505),i=r(9143),o=r(7517),n=r(2968),l=r(7228),a=r(1250);let d=(0,o.l)(a,"default"),u=(0,o.l)(a,"getStaticProps"),c=(0,o.l)(a,"getStaticPaths"),p=(0,o.l)(a,"getServerSideProps"),f=(0,o.l)(a,"config"),g=(0,o.l)(a,"reportWebVitals"),h=(0,o.l)(a,"unstable_getStaticProps"),x=(0,o.l)(a,"unstable_getStaticPaths"),P=(0,o.l)(a,"unstable_getStaticParams"),m=(0,o.l)(a,"unstable_getServerProps"),b=(0,o.l)(a,"unstable_getServerSideProps"),y=new s.PagesRouteModule({definition:{kind:i.x.PAGES,page:"/_error",pathname:"/_error",bundlePath:"",filename:""},components:{App:l.default,Document:n.default},userland:a})},1250:(e,t,r)=>{Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"default",{enumerable:!0,get:function(){return u}});let s=r(5354),i=r(997),o=s._(r(6689)),n=s._(r(9140)),l={400:"Bad Request",404:"This page could not be found",405:"Method Not Allowed",500:"Internal Server Error"};function a(e){let{res:t,err:r}=e;return{statusCode:t&&t.statusCode?t.statusCode:r?r.statusCode:404}}let d={error:{fontFamily:'system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',height:"100vh",textAlign:"center",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"},desc:{lineHeight:"48px"},h1:{display:"inline-block",margin:"0 20px 0 0",paddingRight:23,fontSize:24,fontWeight:500,verticalAlign:"top"},h2:{fontSize:14,fontWeight:400,lineHeight:"28px"},wrap:{display:"inline-block"}};class u extends o.default.Component{render(){let{statusCode:e,withDarkMode:t=!0}=this.props,r=this.props.title||l[e]||"An unexpected error has occurred";return(0,i.jsxs)("div",{style:d.error,children:[(0,i.jsx)(n.default,{children:(0,i.jsx)("title",{children:e?e+": "+r:"Application error: a client-side exception has occurred"})}),(0,i.jsxs)("div",{style:d.desc,children:[(0,i.jsx)("style",{dangerouslySetInnerHTML:{__html:"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}"+(t?"@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}":"")}}),e?(0,i.jsx)("h1",{className:"next-error-h1",style:d.h1,children:e}):null,(0,i.jsx)("div",{style:d.wrap,children:(0,i.jsxs)("h2",{style:d.h2,children:[this.props.title||e?r:(0,i.jsx)(i.Fragment,{children:"Application error: a client-side exception has occurred (see the browser console for more information)"}),"."]})})]})]})}}u.displayName="ErrorPage",u.getInitialProps=a,u.origGetInitialProps=a,("function"==typeof t.default||"object"==typeof t.default&&null!==t.default)&&void 0===t.default.__esModule&&(Object.defineProperty(t.default,"__esModule",{value:!0}),Object.assign(t.default,t),e.exports=t.default)},2968:(e,t,r)=>{r.r(t),r.d(t,{default:()=>l});var s=r(997),i=r(9929),o=r.n(i);r(6112);class n extends o(){static async getInitialProps(e){return{...await o().getInitialProps(e)}}render(){return(0,s.jsxs)(i.Html,{children:[(0,s.jsxs)(i.Head,{children:[s.jsx("link",{href:"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap",rel:"stylesheet"}),s.jsx("meta",{property:"og:type",content:"website"}),s.jsx("meta",{property:"twitter:card",content:"summary_large_image"})]}),(0,s.jsxs)("body",{children:[s.jsx(i.Main,{}),s.jsx(i.NextScript,{})]})]})}}let l=n},9143:(e,t)=>{var r;Object.defineProperty(t,"x",{enumerable:!0,get:function(){return r}}),function(e){e.PAGES="PAGES",e.PAGES_API="PAGES_API",e.APP_PAGE="APP_PAGE",e.APP_ROUTE="APP_ROUTE"}(r||(r={}))},2785:e=>{e.exports=require("next/dist/compiled/next-server/pages.runtime.prod.js")},6689:e=>{e.exports=require("react")},6405:e=>{e.exports=require("react-dom")},997:e=>{e.exports=require("react/jsx-runtime")},7147:e=>{e.exports=require("fs")},1017:e=>{e.exports=require("path")},2781:e=>{e.exports=require("stream")},9796:e=>{e.exports=require("zlib")}};var t=require("../webpack-runtime.js");t.C(e);var r=e=>t(t.s=e),s=t.X(0,[620,785,769,228],()=>r(9978));module.exports=s})();
+(function() {
+var exports = {};
+exports.id = 820;
+exports.ids = [820];
+exports.modules = {
+
+/***/ 3359:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(2426);
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(9297));
+
+var _head = _interopRequireDefault(__webpack_require__(5273));
+
+const statusCodes = {
+  400: 'Bad Request',
+  404: 'This page could not be found',
+  405: 'Method Not Allowed',
+  500: 'Internal Server Error'
+};
+
+function _getInitialProps({
+  res,
+  err
+}) {
+  const statusCode = res && res.statusCode ? res.statusCode : err ? err.statusCode : 404;
+  return {
+    statusCode
+  };
+}
+/**
+* `Error` component used for handling errors.
+*/
+
+
+class Error extends _react.default.Component {
+  render() {
+    const {
+      statusCode
+    } = this.props;
+    const title = this.props.title || statusCodes[statusCode] || 'An unexpected error has occurred';
+    return /*#__PURE__*/_react.default.createElement("div", {
+      style: styles.error
+    }, /*#__PURE__*/_react.default.createElement(_head.default, null, /*#__PURE__*/_react.default.createElement("title", null, statusCode ? `${statusCode}: ${title}` : 'Application error: a client-side exception has occurred')), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("style", {
+      dangerouslySetInnerHTML: {
+        __html: 'body { margin: 0 }'
+      }
+    }), statusCode ? /*#__PURE__*/_react.default.createElement("h1", {
+      style: styles.h1
+    }, statusCode) : null, /*#__PURE__*/_react.default.createElement("div", {
+      style: styles.desc
+    }, /*#__PURE__*/_react.default.createElement("h2", {
+      style: styles.h2
+    }, this.props.title || statusCode ? title : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "Application error: a client-side exception has occurred (", /*#__PURE__*/_react.default.createElement("a", {
+      href: "https://nextjs.org/docs/messages/client-side-exception-occurred"
+    }, "developer guidance"), ")"), "."))));
+  }
+
+}
+
+exports.default = Error;
+Error.displayName = 'ErrorPage';
+Error.getInitialProps = _getInitialProps;
+Error.origGetInitialProps = _getInitialProps;
+const styles = {
+  error: {
+    color: '#000',
+    background: '#fff',
+    fontFamily: '-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif',
+    height: '100vh',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  desc: {
+    display: 'inline-block',
+    textAlign: 'left',
+    lineHeight: '49px',
+    height: '49px',
+    verticalAlign: 'middle'
+  },
+  h1: {
+    display: 'inline-block',
+    borderRight: '1px solid rgba(0, 0, 0,.3)',
+    margin: 0,
+    marginRight: '20px',
+    padding: '10px 23px 10px 0',
+    fontSize: '24px',
+    fontWeight: 500,
+    verticalAlign: 'top'
+  },
+  h2: {
+    fontSize: '14px',
+    fontWeight: 'normal',
+    lineHeight: 'inherit',
+    margin: 0,
+    padding: 0
+  }
+};
+
+/***/ }),
+
+/***/ 2426:
+/***/ (function(module) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+
+/***/ 5273:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("next/dist/next-server/lib/head.js");;
+
+/***/ }),
+
+/***/ 9297:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("react");;
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+var __webpack_exports__ = (__webpack_exec__(3359));
+module.exports = __webpack_exports__;
+
+})();

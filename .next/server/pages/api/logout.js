@@ -1,1 +1,36 @@
-"use strict";(()=>{var e={};e.id=30,e.ids=[30],e.modules={145:e=>{e.exports=require("next/dist/compiled/next-server/pages-api.runtime.prod.js")},3512:(e,t)=>{Object.defineProperty(t,"l",{enumerable:!0,get:function(){return function e(t,n){return n in t?t[n]:"then"in t&&"function"==typeof t.then?t.then(t=>e(t,n)):"function"==typeof t&&"default"===n?t:void 0}}})},6761:(e,t,n)=>{n.r(t),n.d(t,{config:()=>d,default:()=>P,routeModule:()=>l});var r={};n.r(r),n.d(r,{default:()=>i});var a=n(8957),o=n(3471),u=n(3512);function i(e,t){t.setHeader("Set-Cookie",["next-auth.callback-url=; Path=/; Max-Age=0","next-auth.csrf-token=; Path=/; Max-Age=0"]),t.status(200).json({message:"Logged out"})}let P=(0,u.l)(r,"default"),d=(0,u.l)(r,"config"),l=new a.PagesAPIRouteModule({definition:{kind:o.x.PAGES_API,page:"/api/logout",pathname:"/api/logout",bundlePath:"",filename:""},userland:r})},3471:(e,t)=>{var n;Object.defineProperty(t,"x",{enumerable:!0,get:function(){return n}}),function(e){e.PAGES="PAGES",e.PAGES_API="PAGES_API",e.APP_PAGE="APP_PAGE",e.APP_ROUTE="APP_ROUTE"}(n||(n={}))},8957:(e,t,n)=>{e.exports=n(145)}};var t=require("../../webpack-api-runtime.js");t.C(e);var n=t(t.s=6761);module.exports=n})();
+(function() {
+var exports = {};
+exports.id = 30;
+exports.ids = [30];
+exports.modules = {
+
+/***/ 5180:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ handler; }
+/* harmony export */ });
+// pages/api/logout.js
+function handler(req, res) {
+  res.setHeader('Set-Cookie', ['next-auth.callback-url=; Path=/; Max-Age=0', 'next-auth.csrf-token=; Path=/; Max-Age=0' // Clear other cookies if needed
+  ]);
+  res.status(200).json({
+    message: 'Logged out'
+  });
+}
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+var __webpack_exports__ = (__webpack_exec__(5180));
+module.exports = __webpack_exports__;
+
+})();

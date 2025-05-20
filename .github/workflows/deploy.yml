@@ -19,12 +19,17 @@ jobs:
         with:
           node-version: 18
 
+      - name: Inject environment variables
+        run: |
+          echo "NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}" >> $GITHUB_ENV
+          # Add all your secrets here...
+
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
       - name: Run ESLint
         run: npm run lint
-
 
       - name: Build Project
         run: NODE_OPTIONS=--openssl-legacy-provider npm run build

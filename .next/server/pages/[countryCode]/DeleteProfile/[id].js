@@ -1,1 +1,293 @@
-"use strict";(()=>{var e={};e.id=929,e.ids=[929,888],e.modules={7517:(e,t)=>{Object.defineProperty(t,"l",{enumerable:!0,get:function(){return function e(t,r){return r in t?t[r]:"then"in t&&"function"==typeof t.then?t.then(t=>e(t,r)):"function"==typeof t&&"default"===r?t:void 0}}})},695:(e,t,r)=>{r.r(t),r.d(t,{config:()=>P,default:()=>g,getServerSideProps:()=>S,getStaticPaths:()=>h,getStaticProps:()=>O,reportWebVitals:()=>v,routeModule:()=>N,unstable_getServerProps:()=>D,unstable_getServerSideProps:()=>U,unstable_getStaticParams:()=>b,unstable_getStaticPaths:()=>E,unstable_getStaticProps:()=>x});var o={};r.r(o),r.d(o,{default:()=>m,getServerSideProps:()=>f});var n=r(6505),a=r(9143),i=r(7517),s=r(2968),l=r(7228),c=r(997),d=r(6689),u=r(3592),p=r(505),_=r(2703);(function(){var e=Error("Cannot find module '__barrel_optimize__?names=Spin,notification!=!antd'");throw e.code="MODULE_NOT_FOUND",e})(),function(){var e=Error("Cannot find module 'next-i18next'");throw e.code="MODULE_NOT_FOUND",e}(),function(){var e=Error("Cannot find module 'axios'");throw e.code="MODULE_NOT_FOUND",e}(),function(){var e=Error("Cannot find module 'next-i18next/serverSideTranslations'");throw e.code="MODULE_NOT_FOUND",e}(),function(){var e=Error("Cannot find module 'next-auth/react'");throw e.code="MODULE_NOT_FOUND",e}();let f=async({locale:e,query:t})=>{try{let r=await fetchi18n(),o=await (0,p.Yu)({url:`${_.lp}approve-delete-profile/${t.id}`});return{props:{...await Object(function(){var e=Error("Cannot find module 'next-i18next/serverSideTranslations'");throw e.code="MODULE_NOT_FOUND",e}())(e,["msg"]),query:t,res:r,data:o}}}catch(e){return console.error("Server Error: ",e),{props:{error:"Failed to fetch data"}}}},m=({history:e})=>{let t=(0,u.useRouter)(),{countryCode:r,id:o}=t.query,{t:n}=Object(function(){var e=Error("Cannot find module 'next-i18next'");throw e.code="MODULE_NOT_FOUND",e}())("msg"),[a,i]=(0,d.useState)(!0);return((0,d.useEffect)(()=>{if(!o)return;let e=localStorage.getItem("token");Object(function(){var e=Error("Cannot find module 'axios'");throw e.code="MODULE_NOT_FOUND",e}())(`${_.lp}approve-delete-profile/${o}`,{headers:{Authorization:`Bearer ${e}`}}).then(e=>{if(200===e.status){let e=localStorage.getItem("token"),r=localStorage.getItem("session");e&&r&&(Object(function(){var e=Error("Cannot find module 'next-auth/react'");throw e.code="MODULE_NOT_FOUND",e}())({callbackUrl:"/"}),localStorage.removeItem("session"),localStorage.removeItem("account"),localStorage.removeItem("token"),localStorage.removeItem("registered")),Object(function(){var e=Error("Cannot find module '__barrel_optimize__?names=Spin,notification!=!antd'");throw e.code="MODULE_NOT_FOUND",e}()).success({message:"Profile has been deleted."}),setTimeout(()=>{t.push("/")},2e3)}else 400===e.status?Object(function(){var e=Error("Cannot find module '__barrel_optimize__?names=Spin,notification!=!antd'");throw e.code="MODULE_NOT_FOUND",e}()).error({message:"Token not found."}):Object(function(){var e=Error("Cannot find module '__barrel_optimize__?names=Spin,notification!=!antd'");throw e.code="MODULE_NOT_FOUND",e}()).error({message:n("msg.error_profile_delete")});i(!1)}).catch(e=>{console.log("Catch ERR=> ",e),Object(function(){var e=Error("Cannot find module '__barrel_optimize__?names=Spin,notification!=!antd'");throw e.code="MODULE_NOT_FOUND",e}()).error({message:"Profile could not be deleted."})}).finally(()=>{i(!1)})},[o,n,t,e]),a)?c.jsx("p",{children:"Loading..."}):c.jsx(Object(function(){var e=Error("Cannot find module '__barrel_optimize__?names=Spin,notification!=!antd'");throw e.code="MODULE_NOT_FOUND",e}()),{spinning:a,style:{height:"100%"},children:(0,c.jsxs)("div",{className:"text-center pt-50",children:["Hello! You are viewing the delete profile page with country code -"," ",r," ."]})})},g=(0,i.l)(o,"default"),O=(0,i.l)(o,"getStaticProps"),h=(0,i.l)(o,"getStaticPaths"),S=(0,i.l)(o,"getServerSideProps"),P=(0,i.l)(o,"config"),v=(0,i.l)(o,"reportWebVitals"),x=(0,i.l)(o,"unstable_getStaticProps"),E=(0,i.l)(o,"unstable_getStaticPaths"),b=(0,i.l)(o,"unstable_getStaticParams"),D=(0,i.l)(o,"unstable_getServerProps"),U=(0,i.l)(o,"unstable_getServerSideProps"),N=new n.PagesRouteModule({definition:{kind:a.x.PAGES,page:"/[countryCode]/DeleteProfile/[id]",pathname:"/[countryCode]/DeleteProfile/[id]",bundlePath:"",filename:""},components:{App:l.default,Document:s.default},userland:o})},2968:(e,t,r)=>{r.r(t),r.d(t,{default:()=>s});var o=r(997),n=r(9929),a=r.n(n);r(6112);class i extends a(){static async getInitialProps(e){return{...await a().getInitialProps(e)}}render(){return(0,o.jsxs)(n.Html,{children:[(0,o.jsxs)(n.Head,{children:[o.jsx("link",{href:"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap",rel:"stylesheet"}),o.jsx("meta",{property:"og:type",content:"website"}),o.jsx("meta",{property:"twitter:card",content:"summary_large_image"})]}),(0,o.jsxs)("body",{children:[o.jsx(n.Main,{}),o.jsx(n.NextScript,{})]})]})}}let s=i},9143:(e,t)=>{var r;Object.defineProperty(t,"x",{enumerable:!0,get:function(){return r}}),function(e){e.PAGES="PAGES",e.PAGES_API="PAGES_API",e.APP_PAGE="APP_PAGE",e.APP_ROUTE="APP_ROUTE"}(r||(r={}))},2785:e=>{e.exports=require("next/dist/compiled/next-server/pages.runtime.prod.js")},6689:e=>{e.exports=require("react")},6405:e=>{e.exports=require("react-dom")},997:e=>{e.exports=require("react/jsx-runtime")},7147:e=>{e.exports=require("fs")},1017:e=>{e.exports=require("path")},2781:e=>{e.exports=require("stream")},9796:e=>{e.exports=require("zlib")}};var t=require("../../../webpack-runtime.js");t.C(e);var r=e=>t(t.s=e),o=t.X(0,[620,785,769,228],()=>r(695));module.exports=o})();
+(function() {
+var exports = {};
+exports.id = 929;
+exports.ids = [929];
+exports.modules = {
+
+/***/ 384:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ _id_; },
+  "getServerSideProps": function() { return /* binding */ getServerSideProps; }
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(5282);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(9297);
+// EXTERNAL MODULE: external "next/router"
+var router_ = __webpack_require__(6731);
+// EXTERNAL MODULE: ./store/requests/global.js
+var global = __webpack_require__(8318);
+// EXTERNAL MODULE: external "antd"
+var external_antd_ = __webpack_require__(953);
+;// CONCATENATED MODULE: external "next-i18next"
+var external_next_i18next_namespaceObject = require("next-i18next");;
+// EXTERNAL MODULE: ./config/index.js
+var config = __webpack_require__(1130);
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__(2376);
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+;// CONCATENATED MODULE: external "next-i18next/serverSideTranslations"
+var serverSideTranslations_namespaceObject = require("next-i18next/serverSideTranslations");;
+// EXTERNAL MODULE: external "next-auth/react"
+var react_ = __webpack_require__(8353);
+;// CONCATENATED MODULE: ./pages/[countryCode]/DeleteProfile/[id].js
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+ // import { logout } from "../../../store/requests/auth";
+
+
+ // import Layout from "../../../layout";
+
+
+
+
+
+const DeleteProfile = ({
+  history
+}) => {
+  const router = (0,router_.useRouter)();
+  const {
+    countryCode,
+    id
+  } = router.query;
+  const {
+    t
+  } = (0,external_next_i18next_namespaceObject.useTranslation)("msg"); // Ensure this matches your namespace
+
+  const {
+    0: loading,
+    1: setLoading
+  } = (0,external_react_.useState)(true);
+  (0,external_react_.useEffect)(() => {
+    if (!id) {
+      return;
+    }
+
+    const authToken = localStorage.getItem("token");
+    external_axios_default().get(`${config/* ApiUrl */.lp}approve-delete-profile/${id}`, {
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      }
+    }).then(response => {
+      if (response.status === 200) {
+        const token = localStorage.getItem("token");
+        const session = localStorage.getItem("session");
+
+        if (token && session) {
+          (0,react_.signOut)({
+            callbackUrl: '/'
+          });
+          localStorage.removeItem("session");
+          localStorage.removeItem("account");
+          localStorage.removeItem("token");
+          localStorage.removeItem("registered"); // localStorage.clear();
+        }
+
+        external_antd_.notification.success({
+          message: "Profile has been deleted."
+        });
+        setTimeout(() => {
+          router.push("/");
+        }, 2000);
+      } else if (response.status === 400) {
+        external_antd_.notification.error({
+          message: "Token not found."
+        });
+      } else {
+        external_antd_.notification.error({
+          message: t("msg.error_profile_delete")
+        });
+      }
+
+      setLoading(false);
+    }).catch(err => {
+      console.log("Catch ERR=> ", err);
+      external_antd_.notification.error({
+        message: "Profile could not be deleted."
+      });
+    }).finally(() => {
+      setLoading(false);
+    });
+  }, [id, t, router, history]);
+
+  if (loading) {
+    return /*#__PURE__*/jsx_runtime_.jsx("p", {
+      children: "Loading..."
+    }); // Show loading state while waiting for API call
+  }
+
+  return /*#__PURE__*/jsx_runtime_.jsx(external_antd_.Spin, {
+    spinning: loading,
+    style: {
+      height: "100%"
+    },
+    children: /*#__PURE__*/(0,jsx_runtime_.jsxs)("div", {
+      className: "text-center pt-50",
+      children: ["Hello! You are viewing the delete profile page with country code -", " ", countryCode, " ."]
+    })
+  });
+};
+
+const getServerSideProps = async ({
+  locale,
+  query
+}) => {
+  try {
+    const res = await fetchi18n();
+    const data = await (0,global/* getData */.Yu)({
+      url: `${config/* ApiUrl */.lp}approve-delete-profile/${query.id}`
+    });
+    return {
+      props: _objectSpread(_objectSpread({}, await (0,serverSideTranslations_namespaceObject.serverSideTranslations)(locale, ["msg"])), {}, {
+        // Ensure your translation namespace is included here
+        query,
+        res,
+        data
+      })
+    };
+  } catch (error) {
+    console.error("Server Error: ", error);
+    return {
+      props: {
+        error: "Failed to fetch data"
+      }
+    };
+  }
+};
+/* harmony default export */ var _id_ = (DeleteProfile);
+
+/***/ }),
+
+/***/ 953:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("antd");;
+
+/***/ }),
+
+/***/ 2376:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("axios");;
+
+/***/ }),
+
+/***/ 8528:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("i18next");;
+
+/***/ }),
+
+/***/ 3804:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("lodash");;
+
+/***/ }),
+
+/***/ 8353:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("next-auth/react");;
+
+/***/ }),
+
+/***/ 6731:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("next/router");;
+
+/***/ }),
+
+/***/ 9297:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("react");;
+
+/***/ }),
+
+/***/ 5282:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("react/jsx-runtime");;
+
+/***/ }),
+
+/***/ 7561:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("redux");;
+
+/***/ }),
+
+/***/ 8492:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("redux-logger");;
+
+/***/ }),
+
+/***/ 3643:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("redux-persist");;
+
+/***/ }),
+
+/***/ 584:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("redux-persist/lib/storage");;
+
+/***/ }),
+
+/***/ 5694:
+/***/ (function(module) {
+
+"use strict";
+module.exports = require("redux-thunk");;
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+var __webpack_exports__ = __webpack_require__.X(0, [318], function() { return __webpack_exec__(384); });
+module.exports = __webpack_exports__;
+
+})();
