@@ -36,12 +36,6 @@ const Info = ({ t }) => {
     typeof window !== "undefined" ? localStorage.getItem("country") : null;
   const user = useSelector((state) => state.auth.account);
   // const languages = useSelector((state) => state.global.languages.data);
-
-  if (!user) {
-    window.location.href = "/";
-    return;
-  }
-
   // const { data: cities, loading: cityLoading } = useGet({
   //   url: `${ApiUrl}citiesOfCountry/${user && user?.country_id}`,
   // });
@@ -61,8 +55,11 @@ const Info = ({ t }) => {
   const [city, setCity] = useState((user && user.city_id) || "");
   const [testCity, setCities] = useState([]);
   const [currentCountry, setCountries] = useState([]);
+  const [form] = Form.useForm();
 
   useEffect(() => {
+    if (!user || !user.country_id) return;
+
     const session = localStorage.getItem("session");
     const token = localStorage.getItem("token");
     const contact = user && user.user_details?.phone_number;
@@ -88,11 +85,19 @@ const Info = ({ t }) => {
       });
   }, [user]);
 
-  const [form] = Form.useForm();
+  if (!user) {
+    // Redirect inside useEffect or render null/loading
+    useEffect(() => {
+      window.location.href = "/";
+    }, []);
+    return null;
+  }
+
   const handlePhoneInputChange = (token, uid) => {
     setToken(token);
     setUid(uid);
   };
+
   const onSubmit = async (values) => {
     setLoading(true);
     const data = new ProfileSaveModel(values);
@@ -203,7 +208,11 @@ const Info = ({ t }) => {
             />
           </Form.Item>
           <Form.Item name="birthdate" label={t("lbl.birthdate")}>
-            <DateSelect value={birthdate} onChange={(e) => setBirthDate(e)} smsCode={smsCode ? smsCode: null}/>
+            <DateSelect
+              value={birthdate}
+              onChange={(e) => setBirthDate(e)}
+              smsCode={smsCode ? smsCode : null}
+            />
           </Form.Item>
           {/* <DatePicker /> */}
           <Form.Item name="gender" label={t("lbl.gender")}>
@@ -257,7 +266,10 @@ const Info = ({ t }) => {
               onChange={(e) => setCity(e)}
             /> */}
 
-            <Select value={city || ""} className={!city && smsCode ? "required_field" : ""}>
+            <Select
+              value={city || ""}
+              className={!city && smsCode ? "required_field" : ""}
+            >
               {testCity.map((city, index) => (
                 <Select.Option key={index} value={city.id}>
                   {city.name}
