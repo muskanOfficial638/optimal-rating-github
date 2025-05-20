@@ -26,7 +26,7 @@ jobs:
 
 
       - name: Build Project
-        run: npm run build
+        run: NODE_OPTIONS=--openssl-legacy-provider npm run build
 
       - name: Deploy with SSH and Password
         uses: appleboy/ssh-action@v1.0.0
@@ -36,8 +36,9 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "Deploying project..."
-            cd /var/www/your-project-folder
+            cd /var/www/optimal-rating-github
             git pull origin main
+            export NODE_OPTIONS=--openssl-legacy-provider
             npm install --production
             npm run build
             pm2 restart all
