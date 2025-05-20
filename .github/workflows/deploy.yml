@@ -46,7 +46,6 @@ jobs:
             fi
             cd /var/www/optimal-rating-github
             git pull origin main
-            export NODE_OPTIONS=--openssl-legacy-provider
             npm install --production
-            NODE_OPTIONS=--openssl-legacy-provider npm run build
+            npm run build
             pm2 restart all
