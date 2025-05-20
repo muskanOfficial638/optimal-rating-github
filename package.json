@@ -9,7 +9,7 @@
     "dev-server": "node server.js",
     "build-server": "next build",
     "start-server": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "lint": "eslint . --ext .js,.jsx"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
