@@ -41,7 +41,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "Deploying project..."
-            cd /var/www/optimal-rating-github
+            cd /var/www/html/optimal-rating-github
             git pull origin main
             export NODE_OPTIONS=--openssl-legacy-provider
             npm install --production
