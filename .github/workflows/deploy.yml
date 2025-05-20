@@ -41,9 +41,12 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "Deploying project..."
-            cd /var/www/html/optimal-rating-github
+            if [ ! -d "/var/www/optimal-rating-github/.git" ]; then
+            git clone https://github.com/muskanOfficial638/optimal-rating-github.git /var/www/optimal-rating-github
+            fi
+            cd /var/www/optimal-rating-github
             git pull origin main
             export NODE_OPTIONS=--openssl-legacy-provider
             npm install --production
-            npm run build
+            NODE_OPTIONS=--openssl-legacy-provider npm run build
             pm2 restart all
