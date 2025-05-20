@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Form, Input, Button, Select, notification, Modal } from "antd";
 import { useSelector } from "react-redux";
 import { ProfileModel, ProfileSaveModel } from "../../helpers/models";
@@ -10,41 +10,41 @@ import {
   DateSelect,
 } from "../../components/formElements";
 import { Upload } from "../../components";
-import { get } from "../../helpers";
-import { useGet } from "../../hooks";
+// import { get } from "../../helpers";
+// import { useGet } from "../../hooks";
 import { putData, getData } from "../../store/requests/global";
 import { updateState } from "../../store/requests/auth";
 import fileUpload from "../../helpers/fileUpload";
 import { ApiUrl } from "../../config";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 const Info = ({ t }) => {
-  const { i18n } = useTranslation();
-  const { data } = useGet({
-    url: `${ApiUrl}languages`,
-    key: "languages",
-  });
+  // const { i18n } = useTranslation();
+  // const { data } = useGet({
+  //   url: `${ApiUrl}languages`,
+  //   key: "languages",
+  // });
   const [smsCode, setCode] = useState("");
   const [token, setToken] = useState("");
   const [uid, setUid] = useState("");
-  const code = i18n.language;
-  const selectedCountry = get(data, "result.set", []).find(
-    (x) => x.code === code
-  );
+  // const code = i18n.language;
+  // const selectedCountry = get(data, "result.set", []).find(
+  //   (x) => x.code === code
+  // );
   const country =
     typeof window !== "undefined" ? localStorage.getItem("country") : null;
   const user = useSelector((state) => state.auth.account);
-  const languages = useSelector((state) => state.global.languages.data);
+  // const languages = useSelector((state) => state.global.languages.data);
 
   if (!user) {
     window.location.href = "/";
     return;
   }
 
-  const { data: cities, loading: cityLoading } = useGet({
-    url: `${ApiUrl}citiesOfCountry/${user && user?.country_id}`,
-  });
+  // const { data: cities, loading: cityLoading } = useGet({
+  //   url: `${ApiUrl}citiesOfCountry/${user && user?.country_id}`,
+  // });
   const [loading, setLoading] = useState(false);
   const [gender, setGender] = useState(
     (user && user.user_details?.gender) || ""
