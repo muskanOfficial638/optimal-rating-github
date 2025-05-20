@@ -1,0 +1,20 @@
+.title-container {
+  position: relative; /* Allow positioning within this container */
+}
+
+.listTitle {
+  white-space: nowrap; /* Keep title in a single line by default */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncate long text with ellipsis */
+  display: inline-block;
+  max-width: 100%;
+  max-height: 1.2em; /* Limit the height of the title (1 line height) */
+  line-height: 1.2em; /* Set the line height to match the height constraint */
+  transition: max-height 0.3s ease, white-space 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.listTitle:hover {
+  white-space: normal; /* Allow the title to wrap to multiple lines when hovered */
+  word-wrap: break-word; /* Break long words to fit inside the container */
+  max-height: none; /* Remove the height constraint to allow title expansion */
+}

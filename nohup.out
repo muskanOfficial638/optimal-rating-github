@@ -1,0 +1,74 @@
+
+> optimalrating@0.1.1 start
+> next start
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+Killed
+
+> optimalrating@0.1.1 start
+> next start
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+
+> optimalrating@0.1.1 start
+> next start
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1319:16)
+    at listenInCluster (node:net:1367:12)
+    at doListen (node:net:1505:7)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+
+> optimalrating@0.1.1 start
+> next start
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+Killed
+
+> optimalrating@0.1.1 start
+> next start
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+
+> optimalrating@0.1.1 start
+> next start
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1319:16)
+    at listenInCluster (node:net:1367:12)
+    at doListen (node:net:1505:7)
+    at processTicksAndRejections (node:internal/process/task_queues:84:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+Killed
+
+> optimalrating@0.1.1 start
+> next start
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at Server.setupListenHandle [as _listen2] (node:net:1751:16)
+    at listenInCluster (node:net:1799:12)
+    at doListen (node:net:1948:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+
+> optimalrating@0.1.1 start
+> next start
+
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+Killed
