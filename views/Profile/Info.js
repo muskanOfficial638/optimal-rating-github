@@ -83,13 +83,15 @@ const Info = ({ t }) => {
       .catch((error) => {
         console.error("Error fetching countries:", error);
       });
+  }, [user, t]);
+
+  useEffect(() => {
+    if (!user) {
+      window.location.href = "/";
+    }
   }, [user]);
 
   if (!user) {
-    // Redirect inside useEffect or render null/loading
-    useEffect(() => {
-      window.location.href = "/";
-    }, []);
     return null;
   }
 
