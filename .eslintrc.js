@@ -1,6 +1,14 @@
 module.exports = {
-  extends: 'next/core-web-vitals',
+  extends: ['next', 'next/core-web-vitals'],
   rules: {
-    // Add any custom rules here
+    // Your custom rules here
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        // Disable TS rules if needed
+      },
+    },
+  ],
 };
