@@ -48,4 +48,12 @@ jobs:
             git pull origin main
             npm install --production
             npm run build
+             if ! pm2 describe optimalrating > /dev/null; then
+            echo "Starting PM2 process"
+            pm2 start "npx next start -p 4000" --name optimalrating --watch
+            else
+            echo "Restarting PM2 process"
             pm2 restart optimalrating
+            fi
+
+            pm2 save
