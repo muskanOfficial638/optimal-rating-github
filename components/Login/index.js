@@ -165,20 +165,17 @@ const Login = () => {
     const image = response?.picture?.data?.url;
     console.log("response", response);
     // Send token to your Laravel backend
-    const res = await fetch(
-      "https://staging.server.optimalrating.com/api/facbook-login",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          access_token: accessToken,
-          email: response?.email,
-          image: image,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`${ApiUrl}facbook-login`, {
+      method: "POST",
+      body: JSON.stringify({
+        access_token: accessToken,
+        email: response?.email,
+        image: image,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const data = await res.json();
     if (data?.accessToken) {

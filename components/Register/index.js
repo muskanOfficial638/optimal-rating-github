@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { signIn, useSession } from "next-auth/react";
 import { useGet } from "../../hooks";
-import { ApiUrl } from "../../config";
+import { ApiUrl, frontDomain } from "../../config";
 import { get } from "../../helpers";
 import { useRouter } from "next/router";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
@@ -91,7 +91,7 @@ const Register = () => {
           notification.success({ message: t("msg.success_login") });
           setIsRegistered(true);
           router.push(
-            `https://staging.optimalrating.com/${countryCode}/profile`
+            `${frontDomain}${countryCode}/profile`
           );
         } catch (error) {
           const sessionData = localStorage.getItem("session");
@@ -177,20 +177,17 @@ const Register = () => {
     const image = response?.picture?.data?.url;
     // console.log("response", response);
     // Send token to your Laravel backend
-    const res = await fetch(
-      "https://staging.server.optimalrating.com/api/facbook-login",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          access_token: accessToken,
-          email: response?.email,
-          image: image,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`${ApiUrl}facbook-login`, {
+      method: "POST",
+      body: JSON.stringify({
+        access_token: accessToken,
+        email: response?.email,
+        image: image,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const data = await res.json();
     if (data?.accessToken) {
