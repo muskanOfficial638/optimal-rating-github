@@ -20,7 +20,8 @@ module.exports = {
   },
   images: {
         domains: [
-            'staging.server.optimalrating.com'
+            'server.optimalrating.com'
+            // 'staging.server.optimalrating.com'
           ],
     }
 }
