@@ -2,6 +2,7 @@
  * Return API url.
  */
 export const frontDomain = 'https://ww.optimalrating.com';
+// export const frontDomain = 'https://staging.optimalrating.com';
 export const ApiUrl = 'https://server.optimalrating.com/api/';
 
 // export const ApiUrl ='https://staging.server.optimalrating.com/api/';
