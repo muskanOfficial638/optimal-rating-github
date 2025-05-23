@@ -11,7 +11,7 @@ const Permission = ({ children, showChild, type = "login", callback }) => {
   const [sessionUser, setSessionUser] = useState({});
 
   useEffect(() => {
-    axios.get('https://ww.optimalrating.com/api/auth/session')
+    axios.get('https://www.optimalrating.com/api/auth/session')
     .then(function (response) {
       if(response.status === 200){
       setSessionUser(response?.data.user)
