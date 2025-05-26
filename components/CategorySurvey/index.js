@@ -94,10 +94,10 @@ const CategorySurvey = ({
                               src={
                                 (choice && choice.isImageUpdated) ||
                                 choice.deleted_at
-                                  ? `https://staging.server.optimalrating.com/cdn/images/choice/${
+                                  ? `https://server.optimalrating.com/cdn/images/choice/${
                                       choice && choice.choice_image
                                     }`
-                                  : `https://staging.server.optimalrating.com/cdn/images/survey_approval/${
+                                  : `https://server.optimalrating.com/cdn/images/survey_approval/${
                                       choice && choice.choice_image
                                     }`
                               }

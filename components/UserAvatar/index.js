@@ -15,7 +15,7 @@ const UserAvatar = ({ src, className = "", size = 32, shape = "circle" }) => {
 
   const renderSrc =
     !error && src
-      ? `https://staging.server.optimalrating.com/cdn/images/user/${src}`
+      ? `https://server.optimalrating.com/cdn/images/user/${src}`
       : null;
 
   const renderIcon = error || !src ? <UserOutlined /> : null;

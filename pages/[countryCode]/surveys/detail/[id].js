@@ -86,7 +86,7 @@ const CategorySurvey = ({
                       className="ml-auto"
                       title={get(data, "result.set.title")}
                       url={
-                        "https://staging.server.optimalrating.com/storage/survey/" +
+                        "https://server.optimalrating.com/storage/survey/" +
                         chartImageName
                       }
                       pageUrl={`${

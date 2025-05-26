@@ -33,7 +33,7 @@ export const login = async (payload) => {
 export const register = async (payload) => {
   try {
     const response = await axios.post(
-      "https://staging.server.optimalrating.com/api/register",
+      "https://server.optimalrating.com/api/register",
       payload
     );
     return response.data;

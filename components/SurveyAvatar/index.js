@@ -25,7 +25,7 @@ const SurveyAvatar = ({
   };
 
   const renderSrc =
-    !error && src ? `https://staging.server.optimalrating.com/cdn/${url}/${src}` : null;
+    !error && src ? `https://server.optimalrating.com/cdn/${url}/${src}` : null;
   const renderIcon = error || !src ? <CameraOutlined /> : null;
 
   return (
