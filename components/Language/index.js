@@ -40,7 +40,7 @@ const Language = ({ isMenu = false }) => {
                   src={`${process.env.REACT_APP_CDN_URL}images/country/${x.flag}`}
                   alt={x.name}
                 /> */}
-                <Image
+                <img
                   src={`${ImageUrl}country/${x.flag}`}
                   alt={x.name}
                   width={17}
@@ -68,7 +68,7 @@ const Language = ({ isMenu = false }) => {
                 )}`}
                 alt={get(selected, "name")}
               /> */}{" "}
-              <Image
+              <img
                 src={`${ImageUrl}country/${get(
                   selected,
                   "flag"
