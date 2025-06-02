@@ -53,7 +53,7 @@ jobs:
             # pm2 start "npx next start -p 4000" --name optimalrating --watch
             # else
             # echo "Restarting PM2 process"
-            # pm2 restart optimalrating
+            # pm2 restart optimalrating 
             # fi
             pm2 restart all
             pm2 save
