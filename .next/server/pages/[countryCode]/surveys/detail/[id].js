@@ -134,7 +134,7 @@ const CategorySurvey = ({
                   }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components__WEBPACK_IMPORTED_MODULE_10__/* .Share */ .mB, {
                     className: "ml-auto",
                     title: (0,_helpers__WEBPACK_IMPORTED_MODULE_8__/* .get */ .U2)(data, "result.set.title"),
-                    url: "https://staging.server.optimalrating.com/storage/survey/" + chartImageName,
+                    url: "https://server.optimalrating.com/storage/survey/" + chartImageName,
                     pageUrl: `${ false ? 0 : null}/${(0,_helpers__WEBPACK_IMPORTED_MODULE_8__/* .countryCode */ .NI)()}/survey/${(0,_helpers__WEBPACK_IMPORTED_MODULE_8__/* .get */ .U2)(data, "result.set.slug")}`,
                     chartRef: chartRef
                   })]

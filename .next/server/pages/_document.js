@@ -71,14 +71,14 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1__.default {
 //           {/* Global tags */}
 //           <meta property="og:type" content="website" />
 //           <meta name="description" content={details?.description || "Welcome to our site"} />
-//           <meta property="og:title" content={details?.title || "Staging Optimal rating"} />
+//           <meta property="og:title" content={details?.title || "Optimal rating"} />
 //           <meta property="og:description" content={details?.description || "Welcome to our site"} />
-//           <meta property="og:image" content={imgUrl || "https://staging.server.optimalrating.com/storage/survey/in-137.png"} />
+//           <meta property="og:image" content={imgUrl || "https://server.optimalrating.com/storage/survey/in-137.png"} />
 //           <meta property="og:url" content={detailsUrl || "/"} />
 //           <meta property="twitter:card" content="summary_large_image" />
-//           <meta property="twitter:title" content={details?.title || "Staging Optimal rating"} />
+//           <meta property="twitter:title" content={details?.title || "Optimal rating"} />
 //           <meta property="twitter:description" content={details?.description || "Welcome to our site"} />
-//           <meta property="twitter:image" content={imgUrl || "https://staging.server.optimalrating.com/storage/survey/in-137.png"} />
+//           <meta property="twitter:image" content={imgUrl || "https://server.optimalrating.com/storage/survey/in-137.png"} />
 //         </Head>
 //         <body>
 //           <Main />
