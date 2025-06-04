@@ -29,6 +29,7 @@ import SurveyPieChart from "./SurveyPieChart";
 import { useSelector } from "react-redux";
 
 const SpecialSurvey = (props) => {
+  console.log("INDEX")
   const { t } = useTranslation();
   const user = useSelector((state) => state.auth.account);
   // const router = useRouter();
@@ -213,6 +214,7 @@ const SpecialSurvey = (props) => {
   };
 
   const onVote = () => {
+    console.log("CHECKING......")
     if (
       !user.user_details?.gender ||
       !user.user_details?.education ||
