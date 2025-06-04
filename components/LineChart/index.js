@@ -26,7 +26,7 @@ const LineChart = ({
     }, 8000)
   }, [download]);
     data.sort((a, b) => b.score - a.score); //added by Muskan
-  // console.log("Line chartData",data)
+  console.log("Line chartData",data)
    // eslint-disable-next-line react-hooks/exhaustive-deps
    const download = () => {
      if(chartImageName){
