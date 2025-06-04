@@ -45,6 +45,9 @@ jobs:
             git clone https://github.com/OptimalRating/optimal-rating-github.git /var/www/html/production/front/
             fi
             cd /var/www/html/production/front
+            echo "Cleaning working directory to allow git pull..."
+            git reset --hard
+            git clean -fd
             git pull origin main
             npm install --production
             npm run build
