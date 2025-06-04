@@ -23,6 +23,7 @@ import { PieChart, Pie, Cell } from "recharts";
 import SurveyPieChart from "../../../components/SpecialSurvey/SurveyPieChart";
 
 const SpecialSurveyDetails = ({ query, res, resLan }) => {
+  console.log("Is it Speacial survey page")
   // const router = useRouter();
   const [voting, setVoting] = useState(false);
   const [selected, setSelected] = useState(null);
