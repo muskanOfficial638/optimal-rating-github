@@ -161,6 +161,7 @@ const SpecialSurvey = (props) => {
       data: { choice_id: selected.id },
     })
       .then((response) => {
+        console.log("res=>",response)
         notification.success({ message: t("msg.success_mark") });
         setVoting(false);
         setSelected(false);
