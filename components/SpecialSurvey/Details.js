@@ -36,6 +36,7 @@ const SpecialSurveyDetails = (props) => {
   };
 
   const submitVote = () => {
+    console.log("I am in 2")
     postData({
       url: `${ApiUrl}submitVote/${get(
         data,

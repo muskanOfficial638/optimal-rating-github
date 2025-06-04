@@ -156,12 +156,13 @@ const SpecialSurvey = (props) => {
   };
 
   const submitVote = () => {
+    console.log("I am in 1")
     postData({
       url: `${ApiUrl}submitVote/${get(data, "result.set.id")}`,
       data: { choice_id: selected.id },
     })
       .then((response) => {
-        console.log("res=>",response)
+        console.log("res1=>",response)
         notification.success({ message: t("msg.success_mark") });
         setVoting(false);
         setSelected(false);

@@ -138,6 +138,7 @@ const SpecialSurveyDetails = ({ query, res, resLan }) => {
   };
 
   const submitVote = (surveyId) => {
+      console.log("I am in 5")
     postData({
       url: `${ApiUrl}submitVote/${surveyId}`,
       data: { choice_id: selected?.id },
