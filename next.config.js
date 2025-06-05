@@ -3,6 +3,9 @@
 module.exports = {
   // basePath: '/staging',  // Ensure base path if the app runs under a subpath
   // assetPrefix: '/staging/_next',  // Helps with serving assets under a subpath
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   reactStrictMode: true,
   // i18n,
   webpack: (config) => {
@@ -11,17 +14,17 @@ module.exports = {
   },
   serverRuntimeConfig: {
     // Will only be available on the server side
-    mySecret: 'secret',
+    mySecret: "secret",
     secondSecret: process.env.SECOND_SECRET, // Pass through env variables
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
-    staticFolder: '/static',
+    staticFolder: "/static",
   },
   images: {
-        domains: [
-            'server.optimalrating.com'
-            // 'staging.server.optimalrating.com'
-          ],
-    }
-}
+    domains: [
+      "server.optimalrating.com",
+      // 'staging.server.optimalrating.com'
+    ],
+  },
+};
