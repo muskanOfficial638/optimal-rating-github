@@ -59,39 +59,25 @@ export const exists = (data, key) => {
   }
   return !!data;
 };
-export const calculateSurvey = (data, isSpecial) => { //added new by Muskan 
-  let result = data
-    .filter((x) => (isSpecial ? true : x.status === "1"))
-    .map((x, i) => {
-      x.votes = uniqBy(x.votes, "user_id") || [];
-      x.votes_special = uniqBy(x.votes_special, "user_id") || [];
+export const calculateSurvey = (data) => {
+  let result = data.map((x, i) => {
+    const uniqueVotes = uniqBy(x.votes || [], "user_id");
 
-      const N = x.votes.length;
-      const N_Special = x.votes_special.length;
+    const score = uniqueVotes.length;
 
-      const A = N > 0
-        ? x.votes.reduce((a, b) => a + parseFloat(b.mark || 0), 0) / N
-        : 0;
+    return { ...x, score, color: colors[i] };
+  });
 
-      const score = N_Special
-        ? N_Special
-        : A * Math.sqrt(N / (N + Math.sqrt(N) || 1));
-
-      return { ...x, score: score, color: colors[i] };
-    });
-
-  const total = result.reduce((a, b) => a + (isNaN(b.score) ? 0 : b.score), 0);
+  const totalVotes = result.reduce((sum, x) => sum + x.score, 0);
 
   result = result.map((x) => ({
     ...x,
-    percent: total > 0
-      ? isSpecial
-        ? ((x.score / total) * 100).toFixed(2)
-        : ((x.score / 5) * 100).toFixed(2)
+    percent: totalVotes > 0
+      ? ((x.score / totalVotes) * 100).toFixed(2)
       : "0.00",
   }));
 
-  return isSpecial ? result : result.sort((a, b) => b.percent - a.percent);
+  return result.sort((a, b) => b.percent - a.percent);
 };
 //commented by muskan it was working earlier
 // export const calculateSurvey = (data, isSpecial) => {

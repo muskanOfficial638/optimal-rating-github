@@ -23,7 +23,7 @@ import { PieChart, Pie, Cell } from "recharts";
 import SurveyPieChart from "../../../components/SpecialSurvey/SurveyPieChart";
 
 const SpecialSurveyDetails = ({ query, res, resLan }) => {
-  console.log("Is it Speacial survey page")
+  // console.log("Is it Speacial survey page")
   // const router = useRouter();
   const [voting, setVoting] = useState(false);
   const [selected, setSelected] = useState(null);
@@ -136,23 +136,22 @@ const SpecialSurveyDetails = ({ query, res, resLan }) => {
 
   const onClick = (item) => {
     setSelected(item);
+    console.log("item=", item);
   };
 
   const submitVote = (surveyId) => {
-      console.log("I am in 5")
     postData({
       url: `${ApiUrl}submitVote/${surveyId}`,
-      data: { choice_id: selected?.id },
+      data: { choice_id: selected?.id, mark: 1 },
     })
       .then((response) => {
         notification.success({ message: t("msg.success_mark") });
         setVoting(false);
         setSelected(false);
-        refresh();
+        // refresh();
       })
       .catch((err) => {
         if (err.message === "msg.info.not_approved") {
-          // not approved user
           Modal.confirm({
             title: t("lbl.cancel_vote"),
             content: t("msg.must_approved"),
@@ -162,8 +161,13 @@ const SpecialSurveyDetails = ({ query, res, resLan }) => {
           notification.error({
             message: t("msg.error_country_vote_notallowed"),
           });
-        } else notification.error({ message: t("msg.error_mark") });
+        } else {
+          notification.error({ message: t("msg.error_mark") });
+        }
         setVoting(false);
+      })
+      .finally(() => {
+        history.replace(history.asPath);
       });
   };
 
@@ -233,6 +237,7 @@ const SpecialSurveyDetails = ({ query, res, resLan }) => {
   );
   const details = get(res, "result.set");
   const choiceData = calculateSurvey(details.choices, true);
+  // console.log("choice data",choiceData)
   // const imgUrl = `${ImageStorage}survey/${query.countryCode}-${details.id}.png`;
   // const detailsUrl = `${typeof window !== "undefined"? window.location.origin:''}/${query.countryCode}/special/${details.slug}`;
   // const chartImageName = `${query.countryCode}-${details.id}.png`;
