@@ -30,8 +30,8 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      - name: Build Project
-        run: NODE_OPTIONS=--openssl-legacy-provider npm run build
+      #- name: Build Project
+       # run: NODE_OPTIONS=--openssl-legacy-provider npm run build
 
       - name: Deploy with SSH and Password
         uses: appleboy/ssh-action@v1.0.0
@@ -46,8 +46,6 @@ jobs:
             fi
             cd /var/www/html/production/front
             echo "Cleaning working directory to allow git pull..."
-            git reset --hard
-            git clean -fd
             git pull origin main
             npm install --production
             npm run build

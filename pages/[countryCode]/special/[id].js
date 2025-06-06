@@ -136,7 +136,7 @@ const SpecialSurveyDetails = ({ query, res, resLan }) => {
 
   const onClick = (item) => {
     setSelected(item);
-    console.log("item=", item);
+    console.log("selected item here=", item);
   };
 
   const submitVote = (surveyId) => {
