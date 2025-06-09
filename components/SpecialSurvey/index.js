@@ -29,7 +29,7 @@ import SurveyPieChart from "./SurveyPieChart";
 import { useSelector } from "react-redux";
 
 const SpecialSurvey = (props) => {
-  console.log("INDEX")
+  // console.log("INDEX")
   const { t } = useTranslation();
   const user = useSelector((state) => state.auth.account);
   // const router = useRouter();
@@ -157,13 +157,13 @@ const SpecialSurvey = (props) => {
   };
 
   const submitVote = () => {
-    console.log("I am in 1")
+    // console.log("I am in 1")
     postData({
       url: `${ApiUrl}submitVote/${get(data, "result.set.id")}`,
-      data: { choice_id: selected.id },
+      data: { choice_id: selected.id, mark: 1 },
     })
       .then((response) => {
-        console.log("res1=>",response)
+        // console.log("res1=>",response)
         notification.success({ message: t("msg.success_mark") });
         setVoting(false);
         setSelected(false);
@@ -214,7 +214,7 @@ const SpecialSurvey = (props) => {
   };
 
   const onVote = () => {
-    console.log("CHECKING......")
+    // console.log("CHECKING......")
     if (
       !user.user_details?.gender ||
       !user.user_details?.education ||

@@ -61,7 +61,7 @@ export const exists = (data, key) => {
 };
 export const calculateSurvey = (data) => {
   let result = data.map((x, i) => {
-    const uniqueVotes = uniqBy(x.votes || [], "user_id");
+    const uniqueVotes = uniqBy(x.votes || x.votes_special || [], "user_id");
 
     const score = uniqueVotes.length;
 
