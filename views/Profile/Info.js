@@ -147,7 +147,7 @@ const Info = ({ t }) => {
               });
             })
             .catch(() => {
-              notification.success({
+              notification.error({
                 message: t("msg.error_delete_account"),
               });
             });
