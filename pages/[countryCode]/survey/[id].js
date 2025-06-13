@@ -25,7 +25,10 @@ const Summary = ({ query, res, resLan }) => {
   const fetchSurveyDetail = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${ApiUrl}surveys/detail/${id}${url}`);
+      // const response = await axios.get(`${ApiUrl}surveys/detail/${id}${url}`);
+      const response = await axios.get(
+        `${ApiUrl}surveys/detail/${id}${url}&surveyType=normal`
+      );
       setData(response.data);
     } catch (err) {
       setError(err);
@@ -67,8 +70,13 @@ const Summary = ({ query, res, resLan }) => {
 };
 
 export const getServerSideProps = async ({ query }) => {
+  // const res = await getData({
+  //   url: `${ApiUrl}surveys/detail/${query.id}`,
+  // });
+  const surveyType = query.surveyType || "normal"; // default to 'normal' if not provided
+
   const res = await getData({
-    url: `${ApiUrl}surveys/detail/${query.id}`,
+    url: `${ApiUrl}surveys/detail/${query.id}?surveyType=${surveyType}`,
   });
   const resLan = await fetchi18n();
 

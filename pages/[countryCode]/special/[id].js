@@ -433,7 +433,8 @@ const SpecialSurveyDetails = ({ query, res, resLan }) => {
 
 export const getServerSideProps = async ({ query }) => {
   const res = await getData({
-    url: `${ApiUrl}surveys/detail/${query.id}`,
+    // url: `${ApiUrl}surveys/detail/${query.id}`,
+    url: `${ApiUrl}surveys/detail/${query.id}?surveyType='special'`,//updated by muskan
   });
   const resLan = await fetchi18n();
 
