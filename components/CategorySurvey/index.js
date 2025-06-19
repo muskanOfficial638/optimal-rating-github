@@ -128,14 +128,15 @@ const CategorySurvey = ({
                       </Col>
                     ))}
                   </Row>
-                  {/* <PieChart
+                  <PieChart
                     data={filteredChoices.slice(0, 5)}
                     ref={chartRef}
                     chartImageName={chartImageName}
-                  /> */}
+                  />
                   <Divider style={{ marginBottom: 10 }} />
                   <div className="d-flex">
                     <NewSurveyChoice surveyId={get(data, "result.set.id")} />
+                    chartImage= {`${ImageStorage}survey/${chartImageName}`}
                     <Share
                       className="ml-auto"
                       title={get(data, "result.set.title")}
