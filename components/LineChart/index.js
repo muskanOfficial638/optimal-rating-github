@@ -27,17 +27,47 @@ const LineChart = ({
   }, [download]);
     data.sort((a, b) => b.score - a.score); //added by Muskan
   // console.log("Line chartData",data)
+
    // eslint-disable-next-line react-hooks/exhaustive-deps
-   const download = () => {
-     if(chartImageName){
-      domtoimage.toPng(document.getElementById("lineChartId"))
-        .then(function (png) {
-          if(window !== "undefined" && window.innerWidth > 600 && png){
-            postData({ url:  `${ApiUrl}survey-image-upload`, data: { base64_image:png,name:chartImageName} });
-          }
-        }).catch(function (e){});
+  //  const download = () => {
+  //    if(chartImageName){
+  //     domtoimage.toPng(document.getElementById("lineChartId"))
+  //       .then(function (png) {
+  //         if(window !== "undefined" && window.innerWidth > 600 && png){
+  //           postData({ url:  `${ApiUrl}survey-image-upload`, data: { base64_image:png,name:chartImageName} });
+  //         }
+  //       }).catch(function (e){});
+  //   }
+  // }
+   const download = () => { //updated due to height 20-06-2025
+    if (chartImageName) {
+      const chartEl = document.getElementById("lineChartId");
+  
+      if (chartEl) {
+        // 🔧 Temporarily set min-height
+        const originalMinHeight = chartEl.style.minHeight;
+        chartEl.style.minHeight = "200px";
+  
+        domtoimage.toPng(chartEl)
+          .then((png) => {
+            // ✅ Restore original style
+            chartEl.style.minHeight = originalMinHeight;
+  
+            if (typeof window !== "undefined" && window.innerWidth > 600 && png) {
+              postData({
+                url: `${ApiUrl}survey-image-upload`,
+                data: { base64_image: png, name: chartImageName },
+              });
+            }
+          })
+          .catch((e) => {
+            // Restore even on error
+            chartEl.style.minHeight = originalMinHeight;
+            console.error("Image generation failed:", e);
+          });
+      }
     }
-  }
+  };
 
   return (
     <div style={{ width: '100%', height: 'auto' }} className={`LineChart ${className}`} id="lineChartId">
